@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,15 +11,27 @@
 		6521A5482560E4BB00398DB6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521A5472560E4BB00398DB6 /* ContentView.swift */; };
 		6521A54A2560E4BC00398DB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6521A5492560E4BC00398DB6 /* Assets.xcassets */; };
 		6521A54D2560E4BC00398DB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6521A54C2560E4BC00398DB6 /* Preview Assets.xcassets */; };
+		6521A5592561070300398DB6 /* ComicsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521A5582561070300398DB6 /* ComicsTab.swift */; };
+		6521A55D2561093500398DB6 /* NewsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521A55C2561093500398DB6 /* NewsTab.swift */; };
+		6521A56025610DBC00398DB6 /* NovelTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521A55F25610DBC00398DB6 /* NovelTab.swift */; };
+		6521A56325610DC800398DB6 /* MineTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521A56225610DC800398DB6 /* MineTab.swift */; };
+		740DAB60D6226C6BCF98B79F /* Pods_dmzj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 206949B512CA5393917FFE6C /* Pods_dmzj.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		206949B512CA5393917FFE6C /* Pods_dmzj.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dmzj.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EBD88D412BB54891B8934C2 /* Pods-dmzj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dmzj.release.xcconfig"; path = "Target Support Files/Pods-dmzj/Pods-dmzj.release.xcconfig"; sourceTree = "<group>"; };
+		4EE384FDC53620DBA8FD3796 /* Pods-dmzj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dmzj.debug.xcconfig"; path = "Target Support Files/Pods-dmzj/Pods-dmzj.debug.xcconfig"; sourceTree = "<group>"; };
 		6521A5422560E4BB00398DB6 /* dmzj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dmzj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6521A5452560E4BB00398DB6 /* dmzjApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dmzjApp.swift; sourceTree = "<group>"; };
 		6521A5472560E4BB00398DB6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6521A5492560E4BC00398DB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6521A54C2560E4BC00398DB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6521A54E2560E4BC00398DB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6521A5582561070300398DB6 /* ComicsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsTab.swift; sourceTree = "<group>"; };
+		6521A55C2561093500398DB6 /* NewsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTab.swift; sourceTree = "<group>"; };
+		6521A55F25610DBC00398DB6 /* NovelTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovelTab.swift; sourceTree = "<group>"; };
+		6521A56225610DC800398DB6 /* MineTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineTab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				740DAB60D6226C6BCF98B79F /* Pods_dmzj.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		113E9FE829DE8DDF916F101E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				206949B512CA5393917FFE6C /* Pods_dmzj.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		288036F28E0E1AB723529B91 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4EE384FDC53620DBA8FD3796 /* Pods-dmzj.debug.xcconfig */,
+				4EBD88D412BB54891B8934C2 /* Pods-dmzj.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		6521A5392560E4BB00398DB6 = {
 			isa = PBXGroup;
 			children = (
 				6521A5442560E4BB00398DB6 /* dmzj */,
 				6521A5432560E4BB00398DB6 /* Products */,
+				288036F28E0E1AB723529B91 /* Pods */,
+				113E9FE829DE8DDF916F101E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,6 +84,7 @@
 		6521A5442560E4BB00398DB6 /* dmzj */ = {
 			isa = PBXGroup;
 			children = (
+				6521A555256106D200398DB6 /* comment */,
 				6521A5452560E4BB00398DB6 /* dmzjApp.swift */,
 				6521A5472560E4BB00398DB6 /* ContentView.swift */,
 				6521A5492560E4BC00398DB6 /* Assets.xcassets */,
@@ -69,6 +102,49 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		6521A555256106D200398DB6 /* comment */ = {
+			isa = PBXGroup;
+			children = (
+				6521A56A256110F400398DB6 /* mine */,
+				6521A569256110ED00398DB6 /* novel */,
+				6521A557256106F800398DB6 /* news */,
+				6521A556256106E800398DB6 /* comics */,
+			);
+			path = comment;
+			sourceTree = "<group>";
+		};
+		6521A556256106E800398DB6 /* comics */ = {
+			isa = PBXGroup;
+			children = (
+				6521A5582561070300398DB6 /* ComicsTab.swift */,
+			);
+			path = comics;
+			sourceTree = "<group>";
+		};
+		6521A557256106F800398DB6 /* news */ = {
+			isa = PBXGroup;
+			children = (
+				6521A55C2561093500398DB6 /* NewsTab.swift */,
+			);
+			path = news;
+			sourceTree = "<group>";
+		};
+		6521A569256110ED00398DB6 /* novel */ = {
+			isa = PBXGroup;
+			children = (
+				6521A56225610DC800398DB6 /* MineTab.swift */,
+			);
+			path = novel;
+			sourceTree = "<group>";
+		};
+		6521A56A256110F400398DB6 /* mine */ = {
+			isa = PBXGroup;
+			children = (
+				6521A55F25610DBC00398DB6 /* NovelTab.swift */,
+			);
+			path = mine;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -76,9 +152,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6521A5512560E4BC00398DB6 /* Build configuration list for PBXNativeTarget "dmzj" */;
 			buildPhases = (
+				E82C169A774F204B9F611F3E /* [CP] Check Pods Manifest.lock */,
 				6521A53E2560E4BB00398DB6 /* Sources */,
 				6521A53F2560E4BB00398DB6 /* Frameworks */,
 				6521A5402560E4BB00398DB6 /* Resources */,
+				800A2BA6AADFF45A2087D47D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,11 +211,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		800A2BA6AADFF45A2087D47D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dmzj/Pods-dmzj-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dmzj/Pods-dmzj-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dmzj/Pods-dmzj-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E82C169A774F204B9F611F3E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dmzj-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6521A53E2560E4BB00398DB6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6521A56325610DC800398DB6 /* MineTab.swift in Sources */,
+				6521A56025610DBC00398DB6 /* NovelTab.swift in Sources */,
+				6521A55D2561093500398DB6 /* NewsTab.swift in Sources */,
+				6521A5592561070300398DB6 /* ComicsTab.swift in Sources */,
 				6521A5482560E4BB00398DB6 /* ContentView.swift in Sources */,
 				6521A5462560E4BB00398DB6 /* dmzjApp.swift in Sources */,
 			);
@@ -264,6 +388,7 @@
 		};
 		6521A5522560E4BC00398DB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EE384FDC53620DBA8FD3796 /* Pods-dmzj.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -286,6 +411,7 @@
 		};
 		6521A5532560E4BC00398DB6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EBD88D412BB54891B8934C2 /* Pods-dmzj.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
