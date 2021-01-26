@@ -2,6 +2,11 @@ platform :ios, '14.0'
 use_frameworks!
 
 target 'dmzj' do
-pod 'SwiftyJSON'
   
+pod 'SwiftyJSON'
+pod 'FSPagerView'
+pod 'Moya'
+pod 'HandyJSON'
+#pod 'PromiseKit'
+
 end
