@@ -1,0 +1,71 @@
+[
+    {
+        "cover": "https://images.dmzj1.com/tuijian/750_480/210122ltczqit201.jpg",
+        "title": "《苍之骑士团2》预约答题，抽限量礼品！",
+        "sub_title": "《苍之骑士团2》预约",
+        "type": 6,
+        "url": "https://www.wjx.cn/jq/102821622.aspx",
+        "obj_id": 0,
+        "status": ""
+    },
+    {
+        "cover": "https://images.dmzj1.com/tuijian/750_480/210126xinwentj2.jpg",
+        "title": "回顾：1月4周·儿童不能看《小飞侠》了",
+        "sub_title": "回顾：1月4周·儿童不能看《小飞侠》了",
+        "type": 7,
+        "url": "https://v3api.dmzj1.com/article/show/v2/69970.html",
+        "obj_id": 69970,
+        "status": ""
+    },
+    {
+        "cover": "https://images.dmzj1.com/tuijian/750_480/210126xinwentj4.jpg",
+        "title": "今日话题·哈利波特要出电视剧了？",
+        "sub_title": "今日话题·哈利波特要出电视剧了？",
+        "type": 6,
+        "url": "http://nbbs.dmzj1.com/thread-1333745-1-1.html",
+        "obj_id": 0,
+        "status": ""
+    },
+    {
+        "cover": "https://images.dmzj1.com/tuijian/750_480/210114zangsongtj2.jpg",
+        "title": "传奇的大冒险！之后续人生故事",
+        "sub_title": "传奇的大冒险！之后续人生故事",
+        "type": 1,
+        "url": "",
+        "obj_id": 53930,
+        "status": "连载中"
+    },
+    {
+        "cover": "https://images.dmzj1.com/tuijian/750_480/201204xinman94tj5.jpg",
+        "title": "新漫94·人外、穿越、百年沉睡",
+        "sub_title": "新漫94·人外、穿越、百年沉睡",
+        "type": 5,
+        "url": "",
+        "obj_id": 442,
+        "status": ""
+    },
+    {
+        "cover": "http://images.dmzj1.com/recommend_cg_1.png",
+        "title": "全新沉浸式互动阅读颠覆想象力",
+        "sub_title": "全新沉浸式互动阅读颠覆想象力",
+        "type": 6,
+        "url": "http://thirdm.66rpg.com/list/index",
+        "obj_id": 0,
+        "status": ""
+    },
+    {
+        "cover": "http://images.dmzj1.com/recommend_game_shadv_1.png",
+        "title": "宅家玩的游戏 总有一款是你的菜",
+        "sub_title": "宅家玩的游戏 总有一款是你的菜",
+        "type": 999,
+        "url": "http://www.shandw.com/auth",
+        "new_auth_url": "http://www.shandw.com/auth/visitor-auth.html",
+        "obj_id": 0,
+        "status": "",
+        "params": {
+            "channel": 14507,
+            "key": "b65c1de327a8488ab9229ea7629376c8",
+            "sdw_simple": 1
+        }
+    }
+]

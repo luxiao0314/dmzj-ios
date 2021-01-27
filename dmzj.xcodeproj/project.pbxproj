@@ -36,6 +36,7 @@
 		6521A56225610DC800398DB6 /* MineTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineTab.swift; sourceTree = "<group>"; };
 		D5781827257888C300C9F83B /* UModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UModel.swift; sourceTree = "<group>"; };
 		D57818CD2578990E00C9F83B /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		D5DD07D525C112960002059F /* GalleryItems.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GalleryItems.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				D5781827257888C300C9F83B /* UModel.swift */,
+				D5DD07D525C112960002059F /* GalleryItems.json */,
 			);
 			path = model;
 			sourceTree = "<group>";

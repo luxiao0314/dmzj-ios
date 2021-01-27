@@ -24,6 +24,14 @@ struct ResponseData<T: HandyJSON>: HandyJSON {
 
 struct BoutiqueListNew : HandyJSON {
     var comicLists : [ComicList]?
+    var galleryItems: [GalleryItem]?
+}
+
+struct GalleryItem {
+    var cover: String?
+    var title: String?
+    var sub_title: String?
+    var url: String?
 }
 
 struct ComicList : HandyJSON {
