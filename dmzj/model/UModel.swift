@@ -60,3 +60,21 @@ struct Comic : HandyJSON {
     var is_vip: String?
     var tags : [String]?
 }
+
+struct DataItem : HandyJSON {
+    var cover: String!
+    var title: String!
+    var sub_title: String!
+    var type: Int = 0
+    var url: String!
+    var new_auth_url: String!
+    var obj_id: Int = 0
+    var status: String!
+}
+
+struct RecommendIndex : HandyJSON {
+    var category_id: Int = 0
+    var title: String!
+    var sort: Int = 0
+    var data: [DataItem]!
+}

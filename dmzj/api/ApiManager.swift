@@ -22,18 +22,19 @@ let Api = MoyaProvider<ApiManager>(requestClosure: timeoutClosure)
 
 enum ApiManager {
     case boutiqueListNew(sexType: Int)//推荐列表
+    case recommendIndex//推荐列表
 }
 
 extension ApiManager:TargetType {
     
-    var baseURL: URL { return URL(string: "https://app.u17.com/v3/appV3_3/ios/phone")! }
+    var baseURL: URL { return URL(string: "https://nnv3api.dmzj1.com")! }
     
     //请求路径
     var path:String{
         
         switch self {
-        case .boutiqueListNew:
-            return "/comic/boutiqueListNew";
+        case .boutiqueListNew: return "/comic/boutiqueListNew";
+        case .recommendIndex: return "/recommend_index.json";
         }
     }
     
@@ -47,6 +48,8 @@ extension ApiManager:TargetType {
     var method: Moya.Method {
         switch self {
         case .boutiqueListNew(sexType: _):
+            return .get
+        case .recommendIndex:
             return .get
         }
     }
@@ -67,8 +70,10 @@ extension ApiManager:TargetType {
         switch self {
         case .boutiqueListNew(let sexType):
             parmeters["sexType"] = sexType
-            return .requestParameters(parameters: parmeters, encoding: URLEncoding.default)
+            
+        case .recommendIndex: break
         }
+        return .requestParameters(parameters: parmeters, encoding: URLEncoding.default)
     }
 }
 
@@ -84,7 +89,7 @@ extension Response {
 
 extension MoyaProvider {
     @discardableResult
-    open func request<T: HandyJSON>(_ target: Target,
+    open func requests<T: HandyJSON>(_ target: Target,
                                     model: T.Type,
                                     completion: ((_ returnData: T?) -> Void)?) -> Cancellable? {
         
@@ -98,5 +103,19 @@ extension MoyaProvider {
             completion(returnData.data?.returnData)
         })
     }
+    
+    @discardableResult
+        open func request<T: HandyJSON>(_ target: Target,
+                                        model: T.Type,
+                                        completion: ((_ returnData: String?) -> Void)?) -> Cancellable? {
+            return request(target, completion: { (result) in
+                guard let completion = completion else { return }
+                guard let data = try? result.get().data else {
+                    completion(nil)
+                    return
+                }
+                completion(String(data: data, encoding: .utf8))
+            })
+        }
 }
 

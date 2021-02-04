@@ -11,19 +11,22 @@ class BoutiqueListNewViewModel: ObservableObject {
     
     @Published var comicLists = [ComicList]()
     
-    @Published var list:[Int] = []
+    @Published var recommendIndexs = [RecommendIndex]()
     
     init() {
-        _ = (0...30).map{ _ in
-            self.list.append(Int.random(in: 0...50))
-        }
         loadData()
     }
     
     private func loadData() {
         //请求排行列表
-        Api.request(.boutiqueListNew(sexType: 0), model: BoutiqueListNew.self) { (returnData) in
-            self.comicLists =  returnData?.comicLists ?? []
+//        Api.request(.boutiqueListNew(sexType: 0), model: BoutiqueListNew.self) { (returnData) in
+//            self.comicLists =  returnData?.comicLists ?? []
+//        }
+        
+        Api.request(.recommendIndex, model: RecommendIndex.self) { (returnData) in
+            if let recommendIndexs = [RecommendIndex].deserialize(from: returnData) {
+                print(recommendIndexs ,"recommendIndexs")
+            }
         }
     }
 }
