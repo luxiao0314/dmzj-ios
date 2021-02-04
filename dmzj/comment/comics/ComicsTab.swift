@@ -16,6 +16,9 @@ struct ComicsTab: View {
     var columns: [GridItem] =
         Array(repeating: .init(.flexible()), count: 3)
     
+    var columnTwo: [GridItem] =
+        Array(repeating: .init(.flexible()), count: 2)
+    
     var body: some View {
         List(viewModel.comicLists,id:\.sortId){ item in
             VStack(alignment: .leading) {
@@ -28,16 +31,35 @@ struct ComicsTab: View {
                         .font(.headline)
                         .padding(.trailing, 8)
                 }.padding(5)
-                LazyVGrid(columns: columns) {
-                    ForEach(item.comics!,id:\.comicId) { comic in
-                        VStack {
-                            KFImage(URL(string: comic.cover ?? "")!)
-                                .placeholder({ Image("ic_placehoulder") })
-                                .resizable()
-                                .scaledToFill()
-                                .frame(height: 150)
-                            Text(comic.short_description!)
-                                .lineLimit(1)
+                
+                if(item.itemTitle == "条漫每日更新") {
+                    LazyVGrid(columns: columnTwo) {
+                        ForEach(item.comics ?? [],id:\.comicId) { comic in
+                            VStack (alignment: .leading) {
+                                KFImage(URL(string: comic.cover ?? "")!)
+                                    .placeholder({ Image("ic_placehoulder") })
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(height: 110)
+                                    .cornerRadius(5)
+                                Text(comic.name ?? "")
+                                    .lineLimit(1)
+                            }
+                        }
+                    }
+                    
+                } else {
+                    LazyVGrid(columns: columns) {
+                        ForEach(item.comics!,id:\.comicId) { comic in
+                            VStack {
+                                KFImage(URL(string: comic.cover ?? "")!)
+                                    .placeholder({ Image("ic_placehoulder") })
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(height: 150)
+                                Text(comic.name ?? "")
+                                    .lineLimit(1)
+                            }
                         }
                     }
                 }
