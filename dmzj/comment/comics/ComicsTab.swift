@@ -11,25 +11,20 @@ import Moya
 import Alamofire
 
 struct ComicsTab: View {
-    
-    @State var list:[Int] = []
-    
-    var galleryItems: [GalleryItem]?
+        
+    @ObservedObject var viewModel = BoutiqueListNewViewModel()
     
     var body: some View {
-        List(list,id:\.self){ i in
+        List(viewModel.comicLists,id:\.sortId){ item in
             Image(systemName: "heart.fill").foregroundColor(.red).font(.headline)
             Text("完成度:")
-            Text("\(i)")
+            Text(item.itemTitle!)
                 .bold()
                 .foregroundColor(.white).padding(.all,5)
-                .frame(width:(250 * CGFloat(i) / 100) + 40,alignment: .trailing)
+//                .frame(width:(250 * CGFloat(i) / 100) + 40,alignment: .trailing)
                 .background(RoundedRectangle(cornerRadius: 10).fill(Color.blue))
         }
         .onAppear{
-            _ = (0...30).map{ _ in
-                self.list.append(Int.random(in: 0...50))
-            }
         }
     }
     
@@ -43,19 +38,6 @@ struct ComicsTab: View {
         pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "ShopBannerCell")
         return pagerView
     }()
-    
-    private func loadData() {
-//        //请求排行列表
-//        Api.request(.boutiqueListNew(sexType: 0), model: BoutiqueListNew.self) { (returnData) in
-//            self.galleryItems =  returnData?.galleryItems
-//            //            self.rankList = returnData?.rankinglist ?? []
-//            //            //停止刷新
-//            //            self.tableView.uHead?.endRefreshing()
-//            //            self.tableView.uempty?.allowShow = true
-//            //            //重新加载数据
-//            //            self.tableView.reloadData()
-//        }
-    }
 }
 
 //extension ComicsTab: FSPagerViewDelegate, FSPagerViewDataSource {
@@ -79,3 +61,4 @@ struct ComicsTab: View {
 //        pagerView.deselectItem(at: index, animated: true)
 //    }
 //}
+
