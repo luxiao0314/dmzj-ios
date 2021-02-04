@@ -49,6 +49,7 @@ struct ComicList : HandyJSON {
 }
 
 struct Comic : HandyJSON {
+    var comicId: Int = 0
     var name: String?
     var cover: String?
     var subTitle: String?

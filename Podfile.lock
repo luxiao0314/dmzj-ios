@@ -2,9 +2,7 @@ PODS:
   - Alamofire (5.2.1)
   - FSPagerView (0.8.3)
   - HandyJSON (5.0.2)
-  - Kingfisher (5.14.0):
-    - Kingfisher/Core (= 5.14.0)
-  - Kingfisher/Core (5.14.0)
+  - Kingfisher (6.1.0)
   - LLCycleScrollView (1.6.0):
     - Kingfisher
   - Moya (14.0.0):
@@ -16,6 +14,7 @@ PODS:
 DEPENDENCIES:
   - FSPagerView
   - HandyJSON
+  - Kingfisher
   - LLCycleScrollView
   - Moya
   - SwiftyJSON
@@ -34,11 +33,11 @@ SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
-  Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  Kingfisher: f5d8d60a0ef3edd642fd781bae60918599901aff
   LLCycleScrollView: a08f666671f9fd1a205df9defebc3c217d59abc8
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 491ccd3f7592cfc5790c891a9fe6a494d3f50055
+PODFILE CHECKSUM: dc57eefb81321319d6ce966bca54f61ab41c00c9
 
 COCOAPODS: 1.9.3

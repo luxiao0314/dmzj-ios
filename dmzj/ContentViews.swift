@@ -2,12 +2,13 @@
 //  ContentView.swift
 //  dmzj
 //
-//  Created by luxiao on 2021/2/4.
+//  Created by lucio on 2020/11/15.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentViews: View {
+    
     @State private var selection = 1
     
     var body: some View {
@@ -41,11 +42,5 @@ struct ContentView: View {
                     }
                 }
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
