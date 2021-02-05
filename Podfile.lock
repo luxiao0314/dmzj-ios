@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.2.1)
+  - BetterSegmentedControl (2.0.1)
   - FSPagerView (0.8.3)
   - HandyJSON (5.0.2)
   - Kingfisher (6.1.0)
@@ -12,6 +13,7 @@ PODS:
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
+  - BetterSegmentedControl
   - FSPagerView
   - HandyJSON
   - Kingfisher
@@ -22,6 +24,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - BetterSegmentedControl
     - FSPagerView
     - HandyJSON
     - Kingfisher
@@ -31,6 +34,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  BetterSegmentedControl: 09607b27861d49cbce48b7673b74f9150a3d371a
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   Kingfisher: f5d8d60a0ef3edd642fd781bae60918599901aff
@@ -38,6 +42,6 @@ SPEC CHECKSUMS:
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: dc57eefb81321319d6ce966bca54f61ab41c00c9
+PODFILE CHECKSUM: 0dd957c4fd33cdcd421a9d57e3bd971b510e4ed6
 
 COCOAPODS: 1.9.3

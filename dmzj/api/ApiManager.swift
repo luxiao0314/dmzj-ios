@@ -24,6 +24,7 @@ enum ApiManager {
     case boutiqueListNew(sexType: Int)//推荐列表
     case mobileCateList//分类列表
     case recommendIndex//推荐列表
+    case getDetectList//
 }
 
 extension ApiManager:TargetType {
@@ -33,10 +34,10 @@ extension ApiManager:TargetType {
     
     //请求路径
     var path:String{
-        
         switch self {
         case .boutiqueListNew: return "comic/boutiqueListNew";
         case .mobileCateList: return "sort/mobileCateList";
+        case .getDetectList: return "comic/getDetectList";
         case .recommendIndex: return "recommend_index.json";
         }
     }
@@ -55,6 +56,8 @@ extension ApiManager:TargetType {
         case .mobileCateList:
             return .get
         case .recommendIndex:
+            return .get
+        case .getDetectList:
             return .get
         }
     }
@@ -78,6 +81,7 @@ extension ApiManager:TargetType {
             
         case .recommendIndex: break
         case .mobileCateList: break
+        case .getDetectList: break
         }
         return .requestParameters(parameters: parmeters, encoding: URLEncoding.default)
     }

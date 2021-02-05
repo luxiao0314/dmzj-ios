@@ -1,36 +1,101 @@
 //
-//  NewsTab.swift
+//  NovelTab.swift
 //  dmzj
 //
-//  Created by lucio on 2020/11/15.
+//  Created by luxiao on 2021/2/5.
 //
+
 import SwiftUI
+import struct Kingfisher.KFImage
 
 struct NovelTab: View {
     
-    var colors:[Color] = [.red,.blue,.green,.purple,.pink]
-        var body:some View{
-            NavigationView{
-            List{
-                ForEach(0..<5){ i in
-                    Section(header:
-                        Text("计划:\(i)")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .frame(width:UIScreen.main.bounds.width,height: 50)
-                            .background(self.colors[i])
-                        )
-                    {
-                    ForEach(0..<7){m in
-                        Text("子计划:\(m)").listRowInsets(.init(top: 0, leading: 50, bottom: 0, trailing: 0))
+    @ObservedObject var viewModel = NovelModel()
+    
+    var columns: [GridItem] =
+        Array(repeating: .init(.flexible()), count: 3)
+    
+    var columnTwo: [GridItem] =
+        Array(repeating: .init(.flexible()), count: 2)
+    
+    var body: some View {
+        VStack {
+            Text("漫画")
+            List(viewModel.comicLists,id:\.sortId){ item in
+                if(item.comicType != 11) {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Image(systemName: "heart.fill").foregroundColor(.red).font(.headline)
+                            Text(item.itemTitle ?? "").lineLimit(1)
+                            Spacer()    //使用Spacer()将Image推到右侧
+                            Image(systemName: "heart.fill")
+                                .foregroundColor(.red)
+                                .font(.headline)
+                                .padding(.trailing, 8)
+                        }.padding(5)
+                        
+                        if(item.itemTitle == "超人气作品") {
+                            LazyVGrid(columns: columnTwo) {
+                                ForEach(item.comics ?? [],id:\.comicId) { comic in
+                                    VStack (alignment: .leading) {
+                                        KFImage(URL(string: comic.cover ?? "")!)
+                                            .placeholder({ Image("ic_placehoulder") })
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(height: 104)
+                                        Text(comic.name ?? "")
+                                            .lineLimit(1)
+                                    }
+                                }
+                            }
+                        } else if(item.itemTitle == "订阅漫画") {
+                            LazyVGrid(columns: columns) {
+                                ForEach(item.comics ?? [],id:\.comicId) { comic in
+                                    let cover = comic.cover ?? ""
+                                    if(!cover.contains("ubig")) {
+                                        VStack {
+                                            KFImage(URL(string: comic.cover ?? "")!)
+                                                .placeholder({ Image("ic_placehoulder") })
+                                                .resizable()
+                                                .scaledToFill()
+                                                .frame(height: 155)
+                                            Text(comic.name ?? "")
+                                                .lineLimit(1)
+                                        }
+                                    }
+                                }
+                            }
+                        } else {
+                            LazyVGrid(columns: columns) {
+                                ForEach(item.comics!,id:\.name) { comic in
+                                    VStack {
+                                        KFImage(URL(string: comic.cover ?? "")!)
+                                            .placeholder({ Image("ic_placehoulder") })
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(height: 155)
+                                        Text(comic.name ?? "")
+                                            .lineLimit(1)
+                                    }
+                                }
+                            }
                         }
                     }
                 }
             }
-            .environment(\.defaultMinListHeaderHeight, 40)
-//            .listStyle(GroupedListStyle())
-            .listStyle(PlainListStyle())
-            .navigationBarTitle("GroupedListStyle",displayMode: .inline)
+            .onAppear {
+                //取消分割线无效
+                // To remove only extra separators below the list:
+                UITableView.appearance().tableFooterView = UIView()
+                // To remove all separators including the actual ones:
+                UITableView.appearance().separatorStyle = .none
             }
         }
+    }
+}
+
+struct NovelTab_Previews: PreviewProvider {
+    static var previews: some View {
+        NovelTab()
+    }
 }

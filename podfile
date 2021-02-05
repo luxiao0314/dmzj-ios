@@ -12,5 +12,6 @@ pod 'LLCycleScrollView'
 pod 'FSPagerView'
 #用于加载网络图片等,对swift做很好的支持
 pod 'Kingfisher'
+pod 'BetterSegmentedControl'
 
 end

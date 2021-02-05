@@ -7,6 +7,7 @@
 
 import SwiftUI
 import struct Kingfisher.KFImage
+import UIKit
 
 struct NewsTab: View {
     
@@ -15,9 +16,8 @@ struct NewsTab: View {
         Array(repeating: .init(.flexible()), count: 3)
     
     var body: some View {
-        VStack {
-            Text("分类")
-            List(0..<1){ i in
+        NavigationView {
+            List {
                 LazyVGrid(columns: columns) {
                     ForEach(viewModel.rankingList,id:\.sortId) { comic in
                         VStack {
@@ -37,7 +37,7 @@ struct NewsTab: View {
                 UITableView.appearance().tableFooterView = UIView()
                 // To remove all separators including the actual ones:
                 UITableView.appearance().separatorStyle = .none
-            }
+            }.navigationBarTitle("分类", displayMode: .inline)
         }
     }
 }

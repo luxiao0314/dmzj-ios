@@ -30,7 +30,7 @@ struct ContentView: View {
                 .tabItem {
                     VStack {
                         Image(systemName: "star.fill")
-                        Text("书架")
+                        Text("漫画")
                     }
                 }
             MineTab()
