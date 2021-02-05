@@ -18,11 +18,26 @@ struct NovelTab: View {
     var columnTwo: [GridItem] =
         Array(repeating: .init(.flexible()), count: 2)
     
+    var columnFive: [GridItem] =
+        Array(repeating: .init(.flexible()), count: 5)
+    
     var body: some View {
         VStack {
             Text("漫画")
             List(viewModel.comicLists,id:\.sortId){ item in
-                if(item.comicType != 11) {
+                if(item.comicType == 11) {
+                    LazyVGrid(columns: columnFive) {
+                        ForEach(item.comics!,id:\.name) { comic in
+                            VStack {
+                                KFImage(URL(string: comic.cover ?? "")!)
+                                    .placeholder({ Image("ic_placehoulder") })
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(height: 100)
+                            }
+                        }
+                    }
+                } else {
                     VStack(alignment: .leading) {
                         HStack {
                             Image(systemName: "heart.fill").foregroundColor(.red).font(.headline)
@@ -89,6 +104,7 @@ struct NovelTab: View {
                 UITableView.appearance().tableFooterView = UIView()
                 // To remove all separators including the actual ones:
                 UITableView.appearance().separatorStyle = .none
+                UITableView.appearance().separatorColor = .clear
             }
         }
     }
