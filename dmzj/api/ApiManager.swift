@@ -27,7 +27,8 @@ enum ApiManager {
 
 extension ApiManager:TargetType {
     
-    var baseURL: URL { return URL(string: "https://nnv3api.dmzj1.com")! }
+    var baseURL: URL { return URL(string: "https://app.u17.com/v3/appV3_3/ios/phone")! }
+//    var baseURL: URL { return URL(string: "https://nnv3api.dmzj1.com")! }
     
     //请求路径
     var path:String{
@@ -89,7 +90,7 @@ extension Response {
 
 extension MoyaProvider {
     @discardableResult
-    open func requests<T: HandyJSON>(_ target: Target,
+    open func request<T: HandyJSON>(_ target: Target,
                                     model: T.Type,
                                     completion: ((_ returnData: T?) -> Void)?) -> Cancellable? {
         
@@ -105,7 +106,7 @@ extension MoyaProvider {
     }
     
     @discardableResult
-        open func request<T: HandyJSON>(_ target: Target,
+        open func requests<T: HandyJSON>(_ target: Target,
                                         model: T.Type,
                                         completion: ((_ returnData: String?) -> Void)?) -> Cancellable? {
             return request(target, completion: { (result) in

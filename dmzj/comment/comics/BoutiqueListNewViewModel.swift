@@ -19,14 +19,14 @@ class BoutiqueListNewViewModel: ObservableObject {
     
     private func loadData() {
         //请求排行列表
-//        Api.request(.boutiqueListNew(sexType: 0), model: BoutiqueListNew.self) { (returnData) in
-//            self.comicLists =  returnData?.comicLists ?? []
-//        }
-        
-        Api.request(.recommendIndex, model: RecommendIndex.self) { (returnData) in
-            if let recommendIndexs = [RecommendIndex].deserialize(from: returnData) {
-                print(recommendIndexs ,"recommendIndexs")
-            }
+        Api.request(.boutiqueListNew(sexType: 0), model: BoutiqueListNew.self) { (returnData) in
+            self.comicLists =  returnData?.comicLists ?? []
         }
+        
+//        Api.request(.recommendIndex, model: RecommendIndex.self) { (returnData) in
+//            if let recommendIndexs = [RecommendIndex].deserialize(from: returnData) {
+//                print(recommendIndexs ,"recommendIndexs")
+//            }
+//        }
     }
 }
