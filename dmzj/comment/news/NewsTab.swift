@@ -2,28 +2,48 @@
 //  NewsTab.swift
 //  dmzj
 //
-//  Created by lucio on 2020/11/15.
+//  Created by luxiao on 2021/2/5.
 //
+
 import SwiftUI
+import struct Kingfisher.KFImage
 
 struct NewsTab: View {
     
-    @State var list:[Int] = []
-        
+    @ObservedObject var viewModel = NewsModel()
+    var columns: [GridItem] =
+        Array(repeating: .init(.flexible()), count: 3)
+    
     var body: some View {
-        List(list,id:\.self){ i in
-                    Image(systemName: "heart.fill").foregroundColor(.red).font(.headline)
-                    Text("完成度:")
-                    Text("\(i)")
-                        .bold()
-                        .foregroundColor(.white).padding(.all,5)
-                        .frame(width:(250 * CGFloat(i) / 100) + 40,alignment: .trailing)
-                        .background(RoundedRectangle(cornerRadius: 10).fill(Color.blue))
-                }
-                .onAppear{
-                    _ = (0...30).map{ _ in
-                        self.list.append(Int.random(in: 0...50))
+        VStack {
+            Text("分类")
+            List(0..<1){ i in
+                LazyVGrid(columns: columns) {
+                    ForEach(viewModel.rankingList,id:\.sortId) { comic in
+                        VStack {
+                            KFImage(URL(string: comic.cover ?? "")!)
+                                .placeholder({ Image("ic_placehoulder") })
+                                .resizable()
+                                .scaledToFit()
+                            Text(comic.sortName ?? "").padding(.bottom, 8)
+                        }
+                        .border(Color.gray, width: 0.2)
                     }
                 }
+            }
+            .onAppear {
+                //取消分割线无效
+                // To remove only extra separators below the list:
+                UITableView.appearance().tableFooterView = UIView()
+                // To remove all separators including the actual ones:
+                UITableView.appearance().separatorStyle = .none
+            }
+        }
+    }
+}
+
+struct NewsTab_Previews: PreviewProvider {
+    static var previews: some View {
+        NewsTab()
     }
 }

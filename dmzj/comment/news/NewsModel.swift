@@ -9,9 +9,7 @@ import Foundation
 
 class NewsModel: ObservableObject {
     
-    @Published var comicLists = [ComicList]()
-    
-    @Published var recommendIndexs = [RecommendIndex]()
+    @Published var rankingList = [RankingModel]()
     
     init() {
         loadData()
@@ -20,13 +18,7 @@ class NewsModel: ObservableObject {
     private func loadData() {
         //请求排行列表
         Api.request(.mobileCateList, model: CateListModel.self) { (returnData) in
-            self.comicLists =  returnData?.comicLists ?? []
+            self.rankingList =  returnData?.rankingList ?? []
         }
-        
-//        Api.request(.recommendIndex, model: RecommendIndex.self) { (returnData) in
-//            if let recommendIndexs = [RecommendIndex].deserialize(from: returnData) {
-//                print(recommendIndexs ,"recommendIndexs")
-//            }
-//        }
     }
 }
