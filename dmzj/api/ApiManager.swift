@@ -22,6 +22,7 @@ let Api = MoyaProvider<ApiManager>(requestClosure: timeoutClosure)
 
 enum ApiManager {
     case boutiqueListNew(sexType: Int)//推荐列表
+    case mobileCateList//分类列表
     case recommendIndex//推荐列表
 }
 
@@ -34,8 +35,9 @@ extension ApiManager:TargetType {
     var path:String{
         
         switch self {
-        case .boutiqueListNew: return "/comic/boutiqueListNew";
-        case .recommendIndex: return "/recommend_index.json";
+        case .boutiqueListNew: return "comic/boutiqueListNew";
+        case .mobileCateList: return "sort/mobileCateList";
+        case .recommendIndex: return "recommend_index.json";
         }
     }
     
@@ -49,6 +51,8 @@ extension ApiManager:TargetType {
     var method: Moya.Method {
         switch self {
         case .boutiqueListNew(sexType: _):
+            return .get
+        case .mobileCateList:
             return .get
         case .recommendIndex:
             return .get
@@ -73,6 +77,7 @@ extension ApiManager:TargetType {
             parmeters["sexType"] = sexType
             
         case .recommendIndex: break
+        case .mobileCateList: break
         }
         return .requestParameters(parameters: parmeters, encoding: URLEncoding.default)
     }

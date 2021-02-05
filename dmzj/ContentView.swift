@@ -16,21 +16,21 @@ struct ContentView: View {
                 .tabItem {
                     VStack {
                         Image(systemName: "star")
-                        Text("漫画")
+                        Text("首页")
                     }
                 }
             NewsTab()
                 .tabItem {
                     VStack {
                         Image(systemName: "star.fill")
-                        Text("新闻")
+                        Text("分类")
                     }
                 }
             NovelTab()
                 .tabItem {
                     VStack {
                         Image(systemName: "star.fill")
-                        Text("小说")
+                        Text("书架")
                     }
                 }
             MineTab()

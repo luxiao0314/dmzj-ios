@@ -78,3 +78,43 @@ struct RecommendIndex : HandyJSON {
     var sort: Int = 0
     var data: [DataItem]!
 }
+
+struct CateListModel: HandyJSON {
+    var recommendSearch: String?
+    var rankingList:[RankingModel]?
+    var topList:[TopModel]?
+}
+
+struct TopModel: HandyJSON {
+    var sortId: Int = 0
+    var sortName: String?
+    var cover: String?
+    var extra: TopExtra?
+    var uiWeight: Int = 0
+}
+
+struct TabModel: HandyJSON {
+    var argName: String?
+    var argValue: Int = 0
+    var argCon: Int = 0
+    var tabTitle: String?
+}
+
+struct TopExtra: HandyJSON {
+    var title: String?
+    var tabList: [TabModel]?
+}
+
+struct RankingModel: HandyJSON {
+    var argCon: Int = 0
+    var argName: String?
+    var argValue: Int = 0
+    var canEdit: Bool = false
+    var cover: String?
+    var isLike: Bool = false
+    var sortId: Int = 0
+    var sortName: String?
+    var title: String?
+    var subTitle: String?
+    var rankingType: Int = 0
+}

@@ -11,7 +11,7 @@ import struct Kingfisher.KFImage
 
 struct ComicsTab: View {
     
-    @ObservedObject var viewModel = BoutiqueListNewViewModel()
+    @ObservedObject var viewModel = ComicsModel()
     
     var columns: [GridItem] =
         Array(repeating: .init(.flexible()), count: 3)

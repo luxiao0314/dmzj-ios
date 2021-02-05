@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BoutiqueListNewViewModel: ObservableObject {
+class ComicsModel: ObservableObject {
     
     @Published var comicLists = [ComicList]()
     
