@@ -22,8 +22,7 @@ struct NovelTab: View {
         Array(repeating: .init(.flexible()), count: 5)
     
     var body: some View {
-        VStack {
-            Text("漫画")
+        NavigationView {
             List(viewModel.comicLists,id:\.sortId){ item in
                 if(item.comicType == 11) {
                     LazyVGrid(columns: columnFive) {
@@ -105,7 +104,7 @@ struct NovelTab: View {
                 // To remove all separators including the actual ones:
                 UITableView.appearance().separatorStyle = .none
                 UITableView.appearance().separatorColor = .clear
-            }
+            }.navigationTitle("漫画")
         }
     }
 }
